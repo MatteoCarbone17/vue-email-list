@@ -14,3 +14,23 @@ axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
     const result = response.data
     console.log(response.data)
 })
+
+
+
+const { createApp } = Vue ; 
+
+createApp({
+    data (){
+        return{
+            title : 'Hello Vue!',
+            message : '',
+            imgSrc : 'https://picsum.photos/200/300?grayscale'
+        }
+    },
+    methods :{
+        greetings : function(){
+            alert ('Lode a te Vue!')
+        }
+
+    }
+}).mount('#app')
