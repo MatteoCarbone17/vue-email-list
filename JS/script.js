@@ -6,3 +6,11 @@ Bonus
 Far comparire gli indirizzi email solamente quando sono stati tutti generati.
 
 */
+
+
+
+axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+.then (function (response){
+    const result = response.data
+    console.log(response.data)
+})
