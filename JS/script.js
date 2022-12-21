@@ -9,11 +9,6 @@ Far comparire gli indirizzi email solamente quando sono stati tutti generati.
 
 
 
-axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-.then (function (response){
-    const result = response.data
-    console.log(response.data)
-})
 
 
 
@@ -22,15 +17,30 @@ const { createApp } = Vue ;
 createApp({
     data (){
         return{
-            title : 'Hello Vue!',
-            message : '',
-            imgSrc : 'https://picsum.photos/200/300?grayscale'
+          listEmail : [ ], 
         }
     },
-    methods :{
-        greetings : function(){
-            alert ('Lode a te Vue!')
-        }
 
+    created(){
+
+    },
+
+    methods :{
+
+        getNameListEmail(){
+           axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+           .then (function (name){
+            emailName = name.data.response
+            this.listEmail.push(emailName);
+            console.log(this.emailName)
+        })  
+        
     }
+        
+    },
+
+    
+
+    mounted(){
+    },
 }).mount('#app')
