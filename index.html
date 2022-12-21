@@ -18,11 +18,14 @@
             <h1 class="text-center mt-3 mb-3">
                 Lista Email 
             </h1>
-            <ul class="text-center mt-3 mb-3" v-show="(emailName != null)" >
-                <li class="">
-                    {{ emailName }}
+            <ul class="text-center mt-3 mb-3" v-if="(emailName.length == 10 )" >
+                <li class="" v-for="email in emailName">
+                    {{ email }}
                 </li>
             </ul>
+            <p v-else class="fs-3 text-danger text-center">
+                In elaborazione
+            </p>
         </main>
         
     </div>
