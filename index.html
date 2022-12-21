@@ -19,9 +19,9 @@
             <h1 class="text-center mt-3 mb-3">
                 Lista Email 
             </h1>
-            <ul class="text-center mt-3 mb-3">
+            <ul class="text-center mt-3 mb-3" v-show="(emailName != null) " >
                 <li class="">
-                    {{ getNameListEmail()}}
+                    {{ emailName }}
                 </li>
             </ul>
         </main>

@@ -17,30 +17,22 @@ const { createApp } = Vue ;
 createApp({
     data (){
         return{
-          listEmail : [ ], 
+          emailName : null , 
         }
     },
 
-    created(){
-
-    },
-
     methods :{
-
-        getNameListEmail(){
-           axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
-           .then (function (name){
-            emailName = name.data.response
-            this.listEmail.push(emailName);
-            console.log(this.emailName)
-        })  
-        
-    }
         
     },
-
     
 
     mounted(){
+
+        axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
+        .then (function (name){
+           this.emailName = name.data.response
+            console.log(this.emailName)
+        })
+        
     },
 }).mount('#app')
